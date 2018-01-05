@@ -1,7 +1,10 @@
 <template>
   <div class="news-block">
     <Card>
-      <ul class="news-block-list">
+      <div v-if="this.newsList.length === 0">
+        暂无数据
+      </div>
+      <ul class="news-block-list" v-else>
         <li v-for="item in newsList" :key="item.uniquekey" class="news-block-list-item">
           <a href="" target="_blank">{{ item.title }}</a>
         </li>

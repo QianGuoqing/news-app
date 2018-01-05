@@ -58,7 +58,7 @@
   width: 400px;
 }
 
-.news-block-tabs {
-  padding-left: 20px;
+.center-container {
+  margin-left: 20px;
 }
 </style>
