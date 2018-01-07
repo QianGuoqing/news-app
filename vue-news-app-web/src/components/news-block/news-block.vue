@@ -6,7 +6,10 @@
       </div>
       <ul class="news-block-list" v-else>
         <li v-for="item in newsList" :key="item.uniquekey" class="news-block-list-item">
-          <a href="" target="_blank">{{ item.title }}</a>
+          <!-- <a href="" target="_blank">{{ item.title }}</a> -->
+          <router-link 
+            :to="{ name: 'NewsDetails', params: { uniquekey: item.uniquekey}}"
+            target="_blank">{{ item.title }}</router-link>
         </li>
       </ul>
     </Card>

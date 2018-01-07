@@ -44,7 +44,7 @@
           :image-count="7"
           image-type="guonei"
           card-title="国内新闻"
-          image-width="150"></news-image-block>
+          :image-width="150"></news-image-block>
       </Col>
       <Col span="2" class="space">.</Col>
     </Row>
@@ -56,7 +56,7 @@
           :image-count="14"
           image-type="yule"
           card-title="娱乐新闻"
-          image-width="160"></news-image-block>
+          :image-width="160"></news-image-block>
       </Col>
       <Col span="2" class="space">.</Col>
     </Row>
@@ -68,12 +68,14 @@
   import NewsCarousel from '../news-carousel/news-carousel.vue'
   import NewsBlock from '../news-block/news-block.vue'
   import NewsImageBlock from '../news-image-block/news-image-block.vue'
+  import NewsDetails from '../news-details/news-details.vue'
 
   export default {
     components: {
       NewsCarousel,
       NewsBlock,
-      NewsImageBlock
+      NewsImageBlock,
+      NewsDetails
     }
   }
 </script>

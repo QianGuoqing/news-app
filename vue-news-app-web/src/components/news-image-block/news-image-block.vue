@@ -4,7 +4,7 @@
       <p slot="title">{{ cardTitle }}</p>
       <ul class="news-list">
         <li v-for="news in newsList" :key="news.uniquekey">
-          <div class="image-item-block">
+          <!-- <div class="image-item-block">
             <div class="custom-image">
               <img :style="{width: imageWidth + 'px'}" :src="news.thumbnail_pic_s" alt="">
             </div>
@@ -12,7 +12,20 @@
               <h3 class="news-title">{{ news.title }}</h3>
               <p class="author-name">{{ news.author_name }}</p>
             </div>
-          </div>
+          </div> -->
+          <router-link 
+            :to="{ name: 'NewsDetails', params: { uniquekey: news.uniquekey}}"
+            target="_blank">
+            <div class="image-item-block">
+              <div class="custom-image">
+                <img :style="{width: imageWidth + 'px'}" :src="news.thumbnail_pic_s" alt="">
+              </div>
+              <div class="custom-description">
+                <h3 class="news-title">{{ news.title }}</h3>
+                <p class="author-name">{{ news.author_name }}</p>
+              </div>
+            </div>
+          </router-link>
         </li>
       </ul>
     </Card>
