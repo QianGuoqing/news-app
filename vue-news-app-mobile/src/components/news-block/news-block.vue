@@ -4,16 +4,18 @@
       <el-col :span="24">
         <ul class="news-list list-group">
           <li v-for="news in newsList" :key="news.uniquekey" class="list-group-item">
-            <div class="news-list-item">
-              <div class="news-item-image"><img :src="news.thumbnail_pic_s" alt=""></div>
-              <div class="news-item-description">
-                <h3 class="news-item-title">{{ news.title }}</h3>
-                <div class="news-item-extra">
-                  <span class="news-item-type">{{ news.realtype }}</span>
-                  <span class="news-item-timestamp">{{ news.date }}</span>
+            <router-link :to="{ name: 'NewsDetails', params: { uniquekey: news.uniquekey}}">
+              <div class="news-list-item">
+                <div class="news-item-image"><img :src="news.thumbnail_pic_s" alt=""></div>
+                <div class="news-item-description">
+                  <h3 class="news-item-title">{{ news.title }}</h3>
+                  <div class="news-item-extra">
+                    <span class="news-item-type">{{ news.realtype }}</span>
+                    <span class="news-item-timestamp">{{ news.date }}</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </router-link>
           </li>
         </ul>
       </el-col>
@@ -46,7 +48,6 @@
         axios.get(`http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${this.newsType}&count=${this.newsCount}`).then(response => {
           response = response.data
           this.newsList = response
-          console.log(this.newsList)
         }).catch(error => {
           console.log(error)
         })
