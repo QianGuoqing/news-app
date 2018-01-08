@@ -6,6 +6,9 @@
         <div class="news-detail-content">
           <div v-html="newsDetail.pagecontent"></div>
         </div>
+        <div class="news-comments-wrapper">
+          <news-comments :uniquekey="uniquekey"></news-comments>
+        </div>
       </Col>
       <Col span="6">
         <div class="news-image-content">
@@ -19,12 +22,14 @@
       </Col>
       <Col span="2" class="space">.</Col>
     </Row>
+    <BackTop></BackTop>
   </div>
 </template>
 
 <script>
 
   import NewsImageBlock from '../news-image-block/news-image-block.vue'
+  import NewsComments from '../news-comments/news-comments.vue'
   import axios from 'axios'
 
   export default {
@@ -34,7 +39,8 @@
       }
     },
     components: {
-      NewsImageBlock
+      NewsImageBlock,
+      NewsComments
     },
     computed: {
       uniquekey() {
