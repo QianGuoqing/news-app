@@ -4,10 +4,15 @@
       <el-button type="success" plain @click="backToHome"> < </el-button>
     </div>
     <div v-html="newsList.pagecontent"></div>
+    <div class="news-comments-wrapper">
+      <news-comments :uniquekey="uniquekey"></news-comments>
+    </div>
+    <BackTop></BackTop>
   </div>
 </template>
 
 <script>
+  import NewsComments from '../news-comments/news-comments.vue'
   import axios from 'axios'
 
   export default {
@@ -35,6 +40,9 @@
           console.log(error)
         })
       })
+    },
+    components: {
+      NewsComments
     }
   }
 </script>

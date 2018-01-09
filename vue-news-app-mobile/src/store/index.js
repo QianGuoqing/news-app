@@ -9,7 +9,16 @@ const store = new Vuex.Store({
       {
         username: 'admin',
         password: 'admin',
-        comments: ['admin', 'admin'], // 用户的评论列表
+        comments: [
+          {
+            content: 'test',
+            datetime: '2018-01-09'
+          },
+          {
+            content: 'test',
+            datetime: '2018-01-09'
+          }
+        ], // 用户的评论列表
         collections: ['admin', 'admin'] // 用户的收藏列表
       }
     ]
