@@ -133,6 +133,9 @@
           this.$Message.success('登陆成功')
           this.currentUsername = loginUsername
           this.toggleLoginRegisterAndUserCenter = false
+          this.loginStatus.currentUsername = this.currentUsername
+          this.loginStatus.isLogin = true
+          console.log(this.loginStatus.isLogin)
         } else {
           this.$Message.error('用户名或者密码错误')
         }
@@ -171,6 +174,8 @@
       },
       exitLogin() {
         this.toggleLoginRegisterAndUserCenter = true
+        this.loginStatus.currentUsername = ''
+        this.loginStatus.isLogin = false
       },
       ok() {
         this.registerLoginModel = false
@@ -181,7 +186,8 @@
     },
     computed: {
       ...mapState([
-        'users'
+        'users',
+        'loginStatus'
       ])
     }
   }

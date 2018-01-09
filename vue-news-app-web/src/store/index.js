@@ -12,7 +12,11 @@ const store = new Vuex.Store({
         comments: ['admin', 'admin'], // 用户的评论列表
         collections: ['admin', 'admin'] // 用户的收藏列表
       }
-    ]
+    ],
+    loginStatus: {
+      currentUsername: '',
+      isLogin: false
+    }
   },
   mutations: {
     addRegisterNewUser(state, payload) {
